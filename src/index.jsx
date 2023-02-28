@@ -2,34 +2,10 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 import { palettes } from "./palettes.js"
-import SchemeColor from './SchemeColor/SchemeColor.jsx';
+import Palette from "./Palette/Palette.jsx"
 
-const App = () => {
-  return (
-    <div className="container">
-      <header>
-        <h1>Barevné palety</h1>
-      </header>
-      <main>
-        <div className="palette">
-          <div className="palette-scheme palette-scheme--vertical">
-            <img className="scheme-image" src="/img/mimosa-retreat.jpg" alt="Mimosa Retreat" />
-            <div className="scheme-colors">
-              {palettes[0].colors.map((item) => (
-                <SchemeColor
-                  key={item}
-                  color={item} />))}
-            </div>
-          </div>
-          <div className="palette-info">
-            <h2>Mimose Retreat</h2>
-            <p>Brown, combined with shades of yellow, is a rather unusual combination that can be called really sweet. It is both citrusy, caramel, and has a slight hint of cinnamon, which gives it a special versatility. In summer it will invigorate, make you act and move, and in winter it will warm and relax.</p>
-
-            <p>Photo by <a href="https://unsplash.com/photos/XkiONXX7i4o" target="_blank">Sara Cervera</a>.</p>
-          </div>
-        </div>
-
-        <div className="palette">
+/*
+<div className="palette">
           <div className="palette-scheme palette-scheme--horizontal">
             <img className="scheme-image" src="/img/ocean-waves.jpg" alt="Ocean Waves" />
             <div className="scheme-colors">
@@ -46,6 +22,21 @@ const App = () => {
             <p>Photo by <a href="https://unsplash.com/photos/wc9avd2RaN0" target="_blank">Christoffer Engström</a>.</p>
           </div>
         </div>
+  */
+
+const App = () => {
+  return (
+    <div className="container">
+      <header>
+        <h1>Barevné palety</h1>
+      </header>
+      <main>
+        {palettes.map((palette) => (
+          <Palette
+            key={palette.name}
+            paletteData={palette} />
+        ))
+        }
       </main >
       <footer>
         <p>Czechitas, Digitální akademie: Web</p>
