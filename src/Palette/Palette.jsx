@@ -4,7 +4,10 @@ import "./Palette.css"
 
 let Palette = ({ paletteData }) => {
 
-    let orientation = paletteData.direction === "vertical" ? "palette-scheme palette-scheme--vertical" : "palette-scheme palette-scheme--horizontal"
+    let orientation =
+        paletteData.direction === "vertical"
+            ? "palette-scheme palette-scheme--vertical"
+            : "palette-scheme palette-scheme--horizontal"
 
     return (
         <div className="palette">
